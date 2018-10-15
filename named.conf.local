@@ -1,0 +1,34 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+
+//added by sly
+//create zones
+//forward lookup zone-holds A records,mappingof hostnames to IPs
+zone "nictc.com"
+{
+ type master;
+ file "/etc/bind/zones/db.nictconsultants.com";
+};
+
+zone "raliku.com"
+{
+type master;
+file "/etc/bind/zones/db.raliku.com";
+};
+
+//reverse lookup zone--hold PTR  records,maps IPs to hostname
+
+zone "1.202.in-addr.arpa"
+{
+ type master;
+ file "/etc/bind/zones/db.1.202";
+};
+
+
+
